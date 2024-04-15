@@ -17,14 +17,14 @@ const verifyToken = async function(token, expectedUsername){
         const username = decoded.username;
 
         if (username === expectedUsername){
-            return decoded;
+            return true;
         }
 
         throw Exception("Credential Breached");
 
     }
     catch(error){
-        return null;
+        return false;
     }
 }
 
